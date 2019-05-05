@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 24915170}
   - component: {fileID: 24915169}
   m_Layer: 5
-  m_Name: Header Background (2)
+  m_Name: Background Strip 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 1677788646}
   - component: {fileID: 1677788645}
   m_Layer: 5
-  m_Name: Header Background (1)
+  m_Name: Background Strip 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
