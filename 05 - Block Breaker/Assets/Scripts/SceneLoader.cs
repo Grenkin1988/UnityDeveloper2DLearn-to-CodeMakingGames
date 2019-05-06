@@ -8,6 +8,8 @@ public class SceneLoader : MonoBehaviour {
     }
 
     public void LoadStartScene() {
+        GameSession gameStatus = FindObjectOfType<GameSession>();
+        gameStatus.DestroyGameStatus();
         SceneManager.LoadScene(0);
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4630581846259961808}
   - component: {fileID: 7468742760547366851}
   m_Layer: 0
-  m_Name: GameStatus
+  m_Name: GameSession
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,14 +163,6 @@ PrefabInstance:
     - target: {fileID: 8724871299642250266, guid: 5382fec2f0cef57469e79a1dd2e9edd7,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 749004478, guid: 5382fec2f0cef57469e79a1dd2e9edd7, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 749004478, guid: 5382fec2f0cef57469e79a1dd2e9edd7, type: 3}
-      propertyPath: m_isInputParsingRequired
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

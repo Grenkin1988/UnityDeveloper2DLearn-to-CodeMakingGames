@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Block : MonoBehaviour {
     [SerializeField]
     private AudioClip breakSound;
 
     private Level level;
-    private GameStatus gameStatus;
+    private GameSession gameStatus;
 
     private void Start() {
         level = FindObjectOfType<Level>();
-        gameStatus = FindObjectOfType<GameStatus>();
+        gameStatus = FindObjectOfType<GameSession>();
         level.AddBreakableBlocks();
     }
 
