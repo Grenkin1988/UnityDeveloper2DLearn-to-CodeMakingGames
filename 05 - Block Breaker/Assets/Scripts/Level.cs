@@ -7,7 +7,7 @@ public class Level : MonoBehaviour {
 
     private SceneLoader sceneLoader;
 
-    public void AddBreakableBlocks() {
+    public void AddBlockToCount() {
         breakableBlocks++;
     }
 
