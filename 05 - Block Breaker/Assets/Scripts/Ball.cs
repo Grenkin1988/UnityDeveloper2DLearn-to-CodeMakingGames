@@ -9,15 +9,19 @@ public class Ball : MonoBehaviour {
     private float _initialXVelocity = 2f;
     [SerializeField]
     private float _initialYVelocity = 15f;
+    [SerializeField]
+    private AudioClip[] _bounceAudioClips;
 
     private Vector2 _paddleToBallVector;
     private bool _hasStarted = false;
 
     private Rigidbody2D _ballRigidbody2D;
+    private AudioSource _audioSource;
 
     private void Start() {
         _paddleToBallVector = transform.position - _paddle1.transform.position;
         _ballRigidbody2D = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -37,5 +41,12 @@ public class Ball : MonoBehaviour {
     private void LockBallToPaddle() {
         Vector2 paddlePos = _paddle1.transform.position;
         transform.position = paddlePos + _paddleToBallVector;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (_hasStarted && _bounceAudioClips != null && _bounceAudioClips.Length > 0) {
+            var clip = _bounceAudioClips[UnityEngine.Random.Range(0, _bounceAudioClips.Length)];
+            _audioSource.PlayOneShot(clip);
+        }
     }
 }
