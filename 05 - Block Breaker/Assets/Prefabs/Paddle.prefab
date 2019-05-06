@@ -127,4 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minX: 1
   _maxX: 15
-  _mainCamera: {fileID: 0}
+  _mainCamera: {fileID: 1698997866344888817, guid: ac7d94c0462e4694bb2b37b24c27df0d,
+    type: 3}
