@@ -10,6 +10,8 @@ public class GameSession : MonoBehaviour {
     private int pointsPerBlockRemoved = 20;
     [SerializeField]
     private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private bool isAutoPlayEnabled = false;
 
     [SerializeField]
     private int currentScore = 0;
@@ -43,5 +45,9 @@ public class GameSession : MonoBehaviour {
 
     private void UpdateScoreText() {
         scoreText.text = $"{currentScore}";
+    }
+
+    public bool IsAutoPlayEnabled() {
+        return isAutoPlayEnabled;
     }
 }
