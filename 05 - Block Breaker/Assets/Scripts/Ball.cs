@@ -1,31 +1,34 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Ball : MonoBehaviour {
 
     [SerializeField]
-    private Paddle _paddle1;
+    private Paddle paddle1;
     [SerializeField]
-    private float _initialXVelocity = 2f;
+    private float initialXVelocity = 2f;
     [SerializeField]
-    private float _initialYVelocity = 15f;
+    private float initialYVelocity = 15f;
     [SerializeField]
-    private AudioClip[] _bounceAudioClips;
+    private AudioClip[] bounceAudioClips;
+    [SerializeField]
+    private float randomeFactor = 0.2f;
 
-    private Vector2 _paddleToBallVector;
-    private bool _hasStarted = false;
+    private Vector2 paddleToBallVector;
+    private bool hasStarted = false;
 
-    private Rigidbody2D _ballRigidbody2D;
-    private AudioSource _audioSource;
+    private Rigidbody2D ballRigidbody2D;
+    private AudioSource audioSource;
 
     private void Start() {
-        _paddleToBallVector = transform.position - _paddle1.transform.position;
-        _ballRigidbody2D = GetComponent<Rigidbody2D>();
-        _audioSource = GetComponent<AudioSource>();
+        paddleToBallVector = transform.position - paddle1.transform.position;
+        ballRigidbody2D = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
-        if (!_hasStarted) {
+        if (!hasStarted) {
             LockBallToPaddle();
             LaunchOnMouseClick();
         }
@@ -33,20 +36,28 @@ public class Ball : MonoBehaviour {
 
     private void LaunchOnMouseClick() {
         if (Input.GetMouseButtonDown(0)) {
-            _hasStarted = true;
-            _ballRigidbody2D.velocity = new Vector2(_initialXVelocity, _initialYVelocity);
+            hasStarted = true;
+            ballRigidbody2D.velocity = new Vector2(initialXVelocity, initialYVelocity);
         }
     }
 
     private void LockBallToPaddle() {
-        Vector2 paddlePos = _paddle1.transform.position;
-        transform.position = paddlePos + _paddleToBallVector;
+        Vector2 paddlePos = paddle1.transform.position;
+        transform.position = paddlePos + paddleToBallVector;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (_hasStarted && _bounceAudioClips != null && _bounceAudioClips.Length > 0) {
-            var clip = _bounceAudioClips[UnityEngine.Random.Range(0, _bounceAudioClips.Length)];
-            _audioSource.PlayOneShot(clip);
+        Vector2 velocityChange = new Vector2(Random.Range(0, randomeFactor), Random.Range(0, randomeFactor));
+        if (hasStarted) {
+            ballRigidbody2D.velocity += velocityChange;
+            PlayCollisionClip();
+        }
+    }
+
+    private void PlayCollisionClip() {
+        if (bounceAudioClips != null && bounceAudioClips.Length > 0) {
+            var clip = bounceAudioClips[Random.Range(0, bounceAudioClips.Length)];
+            audioSource.PlayOneShot(clip);
         }
     }
 }

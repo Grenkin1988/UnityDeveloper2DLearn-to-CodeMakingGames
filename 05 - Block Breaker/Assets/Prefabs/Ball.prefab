@@ -133,15 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a045ace1726aad49a0b86554da0549b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paddle1: {fileID: 4360551125206621955, guid: 8c8af52ec70d9434d8a91e69097a590f,
-    type: 3}
-  _initialXVelocity: 2
-  _initialYVelocity: 15
-  _bounceAudioClips:
-  - {fileID: 8300000, guid: cf64a0c7c5e8d4a4fbf85ac3b1f5f277, type: 3}
+  paddle1: {fileID: 4360551125206621955, guid: 8c8af52ec70d9434d8a91e69097a590f, type: 3}
+  initialXVelocity: 2
+  initialYVelocity: 15
+  bounceAudioClips:
   - {fileID: 8300000, guid: 4f9b3677ebc930548a1bbc7ef8ab30c5, type: 3}
   - {fileID: 8300000, guid: 36273759dfd914a48b93b0b4f5da347b, type: 3}
   - {fileID: 8300000, guid: 32d19462149c30b4d8c19e2bb5f14044, type: 3}
+  - {fileID: 8300000, guid: cf64a0c7c5e8d4a4fbf85ac3b1f5f277, type: 3}
+  randomeFactor: 0.2
 --- !u!82 &4209286394234310052
 AudioSource:
   m_ObjectHideFlags: 0
