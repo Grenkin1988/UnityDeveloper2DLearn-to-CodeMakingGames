@@ -1674,6 +1674,11 @@ PrefabInstance:
       propertyPath: paddle1
       value: 
       objectReference: {fileID: 1370579127}
+    - target: {fileID: 3278172523940916045, guid: e6d3bd565ac45b24296ff0f44de38078,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d3bd565ac45b24296ff0f44de38078, type: 3}
 --- !u!1001 &1789127534
@@ -2055,7 +2060,7 @@ PrefabInstance:
     - target: {fileID: 7468742760547366851, guid: a32ec2838833ced43bbdd97691ea56cd,
         type: 3}
       propertyPath: isAutoPlayEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a32ec2838833ced43bbdd97691ea56cd, type: 3}

@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Vector2 velocityChange = new Vector2(Random.Range(0, randomeFactor), Random.Range(0, randomeFactor));
+        Vector2 velocityChange = new Vector2(Random.Range(-randomeFactor, randomeFactor), Random.Range(-randomeFactor, randomeFactor));
         if (hasStarted) {
             ballRigidbody2D.velocity += velocityChange;
             PlayCollisionClip();
