@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
     [SerializeField]
     private List<WaveConfig> _waveConfigs;
-
+    [SerializeField]
     private int _startingWave;
 
     // Start is called before the first frame update
@@ -17,8 +17,8 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnAllWaves() {
-        foreach (WaveConfig config in _waveConfigs) {
-            Coroutine startWave = StartCoroutine(SpawnAllEnemiesInWave(config));
+        for (int waveIndex = _startingWave; waveIndex < _waveConfigs.Count; waveIndex++) {
+            Coroutine startWave = StartCoroutine(SpawnAllEnemiesInWave(_waveConfigs[waveIndex]));
             yield return startWave;
         }
     }
