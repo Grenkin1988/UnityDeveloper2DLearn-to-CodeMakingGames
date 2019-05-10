@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1777001403119992851}
   - component: {fileID: 1777001403119992852}
   - component: {fileID: 1777001403119992850}
-  m_Layer: 0
+  - component: {fileID: 204974830}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +97,49 @@ MonoBehaviour:
   _movementSpeed: 10
   _paddingX: 1
   _paddingY: 1
+  _health: 200
   _laserPrefab: {fileID: 8487364066581968361, guid: 742a57ee9b26aea4ca63617feb139269,
     type: 3}
   _projectileSpeed: 10
   _projectileFiringPeriod: 0.1
+--- !u!60 &204974830
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777001403119992853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.47826788, y: 0.074804306}
+      - {x: 0.3854314, y: -0.018817902}
+      - {x: 0.11496073, y: 0.11452961}
+      - {x: 0.07476459, y: 0.36496067}
+      - {x: -0.07488234, y: 0.36496162}
+      - {x: -0.10818954, y: 0.11496067}
+      - {x: -0.35535297, y: -0.008621216}
+      - {x: -0.47157502, y: 0.048151016}
+      - {x: -0.44815028, y: -0.2182293}
+      - {x: -0.37145752, y: -0.2113781}
+      - {x: -0.12826796, y: -0.26822948}
+      - {x: -0.071575165, y: -0.3683071}
+      - {x: 0.071535945, y: -0.3683071}
+      - {x: 0.14456858, y: -0.26826763}
+      - {x: 0.40480396, y: -0.23153687}
+      - {x: 0.47157517, y: -0.24496078}

@@ -3,12 +3,17 @@ using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    [Header("Player")]
     [SerializeField]
     private float _movementSpeed = 10f;
     [SerializeField]
     private float _paddingX = 1f;
     [SerializeField]
     private float _paddingY = 1f;
+    [SerializeField]
+    private int _health = 200;
+
+    [Header("Projectile")]
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
@@ -34,6 +39,22 @@ public class Player : MonoBehaviour {
         Move();
         Fire();
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer) {
+        if (damageDealer == null) { return; }
+        _health -= damageDealer.Damage;
+        damageDealer.Hit();
+        if (_health <= 0) {
+            Die();
+        }
+    }
+
+    private void Die() => Destroy(gameObject);
 
     private void Move() {
         float deltaX = Input.GetAxis("Horizontal") * _movementSpeed * Time.deltaTime;

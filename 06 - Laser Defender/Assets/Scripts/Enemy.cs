@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour {
     private float _projectileSpeed = 10f;
     [SerializeField]
     private GameObject _laserPrefab;
+    [SerializeField]
+    private GameObject _destroyVFX;
+    [SerializeField]
+    private float _exposionDestroyTimeout = 1.0f;
 
     [SerializeField]
     private float _shootCounter;
@@ -54,5 +58,9 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private void Die() => Destroy(gameObject);
+    private void Die() {
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(_destroyVFX, transform.position, transform.rotation);
+        Destroy(explosion, _exposionDestroyTimeout);
+    }
 }
