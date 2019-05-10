@@ -116,6 +116,8 @@ MonoBehaviour:
   _destroyVFX: {fileID: 5113635754861949384, guid: 51b01d64cac782e49a1ce519879f245f,
     type: 3}
   _exposionDestroyTimeout: 1
+  _enemyDieSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
+  _shootingSound: {fileID: 8300000, guid: ad79670dcfdee6749adca32e2bb6b0df, type: 3}
   _shootCounter: 0
 --- !u!58 &1574036587525574660
 CircleCollider2D:
