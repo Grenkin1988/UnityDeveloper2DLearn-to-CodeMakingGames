@@ -365,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &846609745
 GameObject:
@@ -486,6 +486,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25410705604134f469f94f60f58794af, type: 2}
   - {fileID: 11400000, guid: 0c84b21cc618b304f962e5f58409eeeb, type: 2}
   _startingWave: 0
+  _looping: 1
 --- !u!1 &1960984720
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +617,7 @@ PrefabInstance:
     - target: {fileID: 1777001403119992851, guid: 519089873ea99f14fbcd94017b240e3a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1777001403119992851, guid: 519089873ea99f14fbcd94017b240e3a,
         type: 3}
