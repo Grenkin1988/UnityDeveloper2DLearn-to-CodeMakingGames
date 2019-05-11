@@ -13,7 +13,9 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private int _health = 200;
     [SerializeField]
-    private AudioClip _playerDieSound;
+    private AudioClip _deathSound;
+    [Range(0f, 1f),SerializeField]
+    private float _deathSoundVolume = 0.7f;
 
     [Header("Projectile")]
     [SerializeField]
@@ -24,8 +26,10 @@ public class Player : MonoBehaviour {
     private float _projectileFiringPeriod = 0.2f;
     [SerializeField]
     private AudioClip _shootingSound;
+    [Range(0f, 1f), SerializeField]
+    private float _shootingSoundVolume = 0.7f;
 
-    private Camera _gameCamera;
+    private Camera _mainCamera;
     private float _xMin;
     private float _xMax;
     private float _yMin;
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
-        _gameCamera = Camera.main;
+        _mainCamera = Camera.main;
         SetUpMoveBoundaries();
     }
 
@@ -59,7 +63,7 @@ public class Player : MonoBehaviour {
     }
 
     private void Die() {
-        AudioSource.PlayClipAtPoint(_playerDieSound, transform.position);
+        AudioSource.PlayClipAtPoint(_deathSound, _mainCamera.transform.position, _deathSoundVolume);
         Destroy(gameObject);
     }
 
@@ -86,15 +90,15 @@ public class Player : MonoBehaviour {
         while (true) {
             GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, _projectileSpeed);
-            AudioSource.PlayClipAtPoint(_shootingSound, transform.position);
+            AudioSource.PlayClipAtPoint(_shootingSound, _mainCamera.transform.position, _shootingSoundVolume);
             yield return new WaitForSeconds(_projectileFiringPeriod);
         }
     }
 
     private void SetUpMoveBoundaries() {
-        _xMin = _gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + _paddingX;
-        _xMax = _gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - _paddingX;
-        _yMin = _gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + _paddingY;
-        _yMax = _gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - _paddingY;
+        _xMin = _mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + _paddingX;
+        _xMax = _mainCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - _paddingX;
+        _yMin = _mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + _paddingY;
+        _yMax = _mainCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - _paddingY;
     }
 }

@@ -1,8 +1,19 @@
 ﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+    [Header("Enemy")]
     [SerializeField]
     private float _health = 100.0f;
+    [SerializeField]
+    private float _exposionDestroyTimeout = 1.0f;
+    [SerializeField]
+    private GameObject _destroyVFX;
+    [SerializeField]
+    private AudioClip _deathSound;
+    [Range(0f, 1f), SerializeField]
+    private float _deathSoundVolume = 0.7f;
+
+    [Header("Shooting")]
     [SerializeField]
     private float _minTimeBetweenShots = 0.2f;
     [SerializeField]
@@ -12,19 +23,18 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
-    private GameObject _destroyVFX;
-    [SerializeField]
-    private float _exposionDestroyTimeout = 1.0f;
-    [SerializeField]
-    private AudioClip _enemyDieSound;
-    [SerializeField]
     private AudioClip _shootingSound;
+    [Range(0f, 1f), SerializeField]
+    private float _shootingSoundVolume = 0.7f;
 
     [SerializeField]
     private float _shootCounter;
 
+    private Camera _mainCamera;
+
     // Start is called before the first frame update
     private void Start() {
+        _mainCamera = Camera.main;
         SetShootCounter();
     }
 
@@ -46,7 +56,7 @@ public class Enemy : MonoBehaviour {
     private void Fire() {
         GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -_projectileSpeed);
-        AudioSource.PlayClipAtPoint(_shootingSound, transform.position);
+        AudioSource.PlayClipAtPoint(_shootingSound, _mainCamera.transform.position, _shootingSoundVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -64,7 +74,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Die() {
-        AudioSource.PlayClipAtPoint(_enemyDieSound, transform.position);
+        AudioSource.PlayClipAtPoint(_deathSound, _mainCamera.transform.position, _deathSoundVolume);
         Destroy(gameObject);
         GameObject explosion = Instantiate(_destroyVFX, transform.position, transform.rotation);
         Destroy(explosion, _exposionDestroyTimeout);

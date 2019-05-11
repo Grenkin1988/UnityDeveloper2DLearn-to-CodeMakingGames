@@ -108,16 +108,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _exposionDestroyTimeout: 1
+  _destroyVFX: {fileID: 5113635754861949384, guid: 51b01d64cac782e49a1ce519879f245f,
+    type: 3}
+  _deathSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
+  _deathSoundVolume: 0.7
   _minTimeBetweenShots: 0.2
   _maxTimeBetweenShots: 3
   _projectileSpeed: 10
   _laserPrefab: {fileID: 8487364066581968361, guid: 71db12159f5485049bd6a2b2872190d7,
     type: 3}
-  _destroyVFX: {fileID: 5113635754861949384, guid: 51b01d64cac782e49a1ce519879f245f,
-    type: 3}
-  _exposionDestroyTimeout: 1
-  _enemyDieSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
   _shootingSound: {fileID: 8300000, guid: ad79670dcfdee6749adca32e2bb6b0df, type: 3}
+  _shootingSoundVolume: 0.5
   _shootCounter: 0
 --- !u!58 &1574036587525574660
 CircleCollider2D:
