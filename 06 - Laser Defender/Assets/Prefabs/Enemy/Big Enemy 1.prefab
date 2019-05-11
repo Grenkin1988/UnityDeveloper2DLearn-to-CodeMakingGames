@@ -115,7 +115,7 @@ MonoBehaviour:
     type: 3}
   _deathSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
   _deathSoundVolume: 0.7
-  _score: 150
+  _score: 300
   _minTimeBetweenShots: 0.5
   _maxTimeBetweenShots: 3
   _projectileSpeed: 8
