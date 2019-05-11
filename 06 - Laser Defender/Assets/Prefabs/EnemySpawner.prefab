@@ -55,3 +55,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c64aaddb2c6c40446b76b7812d3251fd, type: 2}
   _startingWave: 0
   _looping: 1
+  _shouldRandomizeWaves: 1
+  _numberOfWavesToGenerate: 20
+  _simpleEnemyChance: 0.5
+  _fastEnemyChance: 0.3
+  _bigEnemyChance: 0.2
+  _simpleEnemyPrefabs:
+  - {fileID: 3813244974887726599, guid: 0d97a82b082313e49b9ed1677fbac6fa, type: 3}
+  - {fileID: 3813244974887726599, guid: 30f4a7d0c7a230c4387523da38656fcf, type: 3}
+  _fastEnemyPrefabs:
+  - {fileID: 3813244974887726599, guid: 63e6645599a9b454593590bd5d39f29e, type: 3}
+  _bigEnemyPrefabs:
+  - {fileID: 3813244974887726599, guid: 139fba3bebf8f4243812d6c383c6b8ea, type: 3}
+  _paths:
+  - {fileID: 445000780415724921, guid: 9fefc8bbbfe2e2243a3452149f0086e7, type: 3}
+  - {fileID: 445000780415724921, guid: 81f04e9ad5b806a4f9e27631e49d4ef6, type: 3}
+  - {fileID: 6884691298587996521, guid: ba47673db79cd6b44afb6af75328c4ef, type: 3}
+  - {fileID: 6884691298587996521, guid: d061ae2abf3961942b078f3a2f329823, type: 3}
+  _simpleEnemySpeed: 10
+  _fastEnemySpeed: 15
+  _bigEnemySpeed: 6
+  _speedRandomness: 2
+  _minNumberOfEnemies: 5
+  _maxNumberOfEnemies: 20
+  _minTimeBetweenSpawns: 0.2
+  _maxTimeBetweenSpawns: 1.5

@@ -117,7 +117,7 @@ MonoBehaviour:
   _deathSoundVolume: 0.7
   _score: 150
   _minTimeBetweenShots: 0.1
-  _maxTimeBetweenShots: 1.5
+  _maxTimeBetweenShots: 1
   _projectileSpeed: 15
   _laserPrefab: {fileID: 8487364066581968361, guid: 71db12159f5485049bd6a2b2872190d7,
     type: 3}

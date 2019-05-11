@@ -10,8 +10,6 @@ public class WaveConfig : ScriptableObject {
     [SerializeField]
     private float _timeBetweenSpawns = 0.5f;
     [SerializeField]
-    private float _spawnRandomFactor = 0.3f;
-    [SerializeField]
     private int _numberOfEnemies = 5;
     [SerializeField]
     private float _moveSpeed = 2f;
@@ -19,7 +17,6 @@ public class WaveConfig : ScriptableObject {
     public GameObject EnemyPrefab => _enemyPrefab;
     public GameObject PathPrefab => _pathPrefab;
     public float TimeBetweenSpawns => _timeBetweenSpawns;
-    public float SpawnRandomFactor => _spawnRandomFactor;
     public int NumberOfEnemies => _numberOfEnemies;
     public float MoveSpeed => _moveSpeed;
 
@@ -27,5 +24,21 @@ public class WaveConfig : ScriptableObject {
         foreach (Transform child in PathPrefab.transform) {
             yield return child;
         }   
+    }
+
+    public static WaveConfig CreateWave(
+        GameObject enemyPrefab,
+        GameObject pathPrefab,
+        float timeBetweenSpawns,
+        int numberOfEnemies,
+        float moveSpeed) {
+        var config = new WaveConfig {
+            _enemyPrefab = enemyPrefab,
+            _pathPrefab = pathPrefab,
+            _timeBetweenSpawns = timeBetweenSpawns,
+            _numberOfEnemies = numberOfEnemies,
+            _moveSpeed = moveSpeed
+        };
+        return config;
     }
 }
