@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
     private AudioClip _deathSound;
     [Range(0f, 1f), SerializeField]
     private float _deathSoundVolume = 0.7f;
+    [SerializeField]
+    private int _score = 150;
 
     [Header("Shooting")]
     [SerializeField]
@@ -31,10 +33,12 @@ public class Enemy : MonoBehaviour {
     private float _shootCounter;
 
     private Camera _mainCamera;
+    private GameSession _currentGame;
 
     // Start is called before the first frame update
     private void Start() {
         _mainCamera = Camera.main;
+        _currentGame = FindObjectOfType<GameSession>();
         SetShootCounter();
     }
 
@@ -70,6 +74,7 @@ public class Enemy : MonoBehaviour {
         damageDealer.Hit();
         if (_health <= 0) {
             Die();
+            AddToScore();
         }
     }
 
@@ -78,5 +83,9 @@ public class Enemy : MonoBehaviour {
         Destroy(gameObject);
         GameObject explosion = Instantiate(_destroyVFX, transform.position, transform.rotation);
         Destroy(explosion, _exposionDestroyTimeout);
+    }
+
+    private void AddToScore() {
+        _currentGame.AddScore(_score);
     }
 }

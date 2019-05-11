@@ -13,9 +13,14 @@ public class Level : MonoBehaviour {
         SceneManager.LoadScene("GameOver");
     }
 
-    public void LoadGameScreen() => SceneManager.LoadScene("Game");
+    public void LoadGameScreen() => LoadSceneAndReset("Game");
 
-    public void LoadStartMenu() => SceneManager.LoadScene("StartMenu");
+    public void LoadStartMenu() => LoadSceneAndReset("StartMenu");
+
+    private void LoadSceneAndReset(string sceneName) {
+        FindObjectOfType<GameSession>().ResetGame();
+        SceneManager.LoadScene(sceneName);
+    }
 
     public void QuitGame() {
 #if UNITY_EDITOR

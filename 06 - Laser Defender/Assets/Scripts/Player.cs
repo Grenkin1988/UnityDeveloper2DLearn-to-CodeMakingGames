@@ -36,7 +36,8 @@ public class Player : MonoBehaviour {
     private float _yMax;
     private Coroutine _firingCoroutine;
 
-    // Start is called before the first frame update
+    public int Health => _health;
+
     private void Start() {
         _mainCamera = Camera.main;
         SetUpMoveBoundaries();
