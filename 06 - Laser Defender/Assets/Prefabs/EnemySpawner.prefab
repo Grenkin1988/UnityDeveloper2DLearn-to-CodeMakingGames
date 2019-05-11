@@ -48,5 +48,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c64aaddb2c6c40446b76b7812d3251fd, type: 2}
   - {fileID: 11400000, guid: 25410705604134f469f94f60f58794af, type: 2}
   - {fileID: 11400000, guid: 0c84b21cc618b304f962e5f58409eeeb, type: 2}
+  - {fileID: 11400000, guid: 79d3426a6efb8734fb3ef96b1632a01f, type: 2}
+  - {fileID: 11400000, guid: 57970f1c39328914bb85ca0bc2693069, type: 2}
+  - {fileID: 11400000, guid: 25410705604134f469f94f60f58794af, type: 2}
+  - {fileID: 11400000, guid: 79d3426a6efb8734fb3ef96b1632a01f, type: 2}
+  - {fileID: 11400000, guid: c64aaddb2c6c40446b76b7812d3251fd, type: 2}
   _startingWave: 0
   _looping: 1

@@ -56,7 +56,7 @@ public class Player : MonoBehaviour {
 
     private void ProcessHit(DamageDealer damageDealer) {
         if (damageDealer == null) { return; }
-        _health -= damageDealer.Damage;
+        _health = Mathf.Clamp(_health - damageDealer.Damage, 0, int.MaxValue);
         damageDealer.Hit();
         if (_health <= 0) {
             Die();

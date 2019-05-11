@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3813244974887726593}
   - component: {fileID: 3813244974887726592}
   - component: {fileID: -1115401393571286280}
-  - component: {fileID: -4707128030368475577}
-  - component: {fileID: 1574036587525574660}
-  - component: {fileID: 3362363720168786901}
-  - component: {fileID: 7510809373410443673}
+  - component: {fileID: 2025665949189943149}
+  - component: {fileID: 1084451593155041727}
+  - component: {fileID: -8995952799343087611}
+  - component: {fileID: 6297918843383754287}
   m_Layer: 9
-  m_Name: Enemy1
+  m_Name: Fast Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5520b3ea4094284d8d475782e623329, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39e289b6acd016449a275d115df0faa3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12226fdf982d8f4fa31f6225b869777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4707128030368475577
+--- !u!114 &2025665949189943149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,15 +115,16 @@ MonoBehaviour:
     type: 3}
   _deathSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
   _deathSoundVolume: 0.7
-  _minTimeBetweenShots: 0.2
-  _maxTimeBetweenShots: 3
-  _projectileSpeed: 10
+  _score: 150
+  _minTimeBetweenShots: 0.1
+  _maxTimeBetweenShots: 1.5
+  _projectileSpeed: 15
   _laserPrefab: {fileID: 8487364066581968361, guid: 71db12159f5485049bd6a2b2872190d7,
     type: 3}
   _shootingSound: {fileID: 8300000, guid: ad79670dcfdee6749adca32e2bb6b0df, type: 3}
   _shootingSoundVolume: 0.5
   _shootCounter: 0
---- !u!58 &1574036587525574660
+--- !u!58 &1084451593155041727
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +139,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
---- !u!114 &3362363720168786901
+  m_Radius: 0.36
+--- !u!114 &-8995952799343087611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 500
---- !u!50 &7510809373410443673
+--- !u!50 &6297918843383754287
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
