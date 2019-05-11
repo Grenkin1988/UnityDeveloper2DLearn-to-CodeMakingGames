@@ -29,20 +29,16 @@ public class Enemy : MonoBehaviour {
     [Range(0f, 1f), SerializeField]
     private float _shootingSoundVolume = 0.7f;
 
-    [SerializeField]
     private float _shootCounter;
-
     private Camera _mainCamera;
     private GameSession _currentGame;
 
-    // Start is called before the first frame update
     private void Start() {
         _mainCamera = Camera.main;
         _currentGame = FindObjectOfType<GameSession>();
         SetShootCounter();
     }
 
-    // Update is called once per frame
     private void Update() {
         CountDownAndShoot();
     }

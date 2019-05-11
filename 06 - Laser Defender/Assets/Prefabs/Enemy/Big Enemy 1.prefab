@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1007276953
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d1d1484492104534b9e379b342e92bca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -115,15 +115,14 @@ MonoBehaviour:
     type: 3}
   _deathSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
   _deathSoundVolume: 0.7
-  _score: 300
+  _score: 350
   _minTimeBetweenShots: 0.5
-  _maxTimeBetweenShots: 3
+  _maxTimeBetweenShots: 2
   _projectileSpeed: 8
   _laserPrefab: {fileID: 8487364066581968361, guid: ed2e40b44511ac34483800769c71a14f,
     type: 3}
   _shootingSound: {fileID: 8300000, guid: 8a61502eafaec334fa4c44b96743b387, type: 3}
   _shootingSoundVolume: 0.5
-  _shootCounter: 0
 --- !u!58 &1574036587525574660
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -43,7 +42,6 @@ public class Player : MonoBehaviour {
         SetUpMoveBoundaries();
     }
 
-    // Update is called once per frame
     private void Update() {
         Move();
         Fire();

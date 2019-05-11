@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1125052118361791851}
   - component: {fileID: 2284069047482222789}
   - component: {fileID: 5610356029494386157}
+  - component: {fileID: -3604817294544492853}
   m_Layer: 11
   m_Name: Enemy Bomb
   m_TagString: Untagged
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 655986683
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea20f31c02beb5c4283e68033e1ebf74, type: 3}
   m_Color: {r: 1, g: 0.41611814, b: 0, a: 1}
@@ -133,3 +134,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 300
+--- !u!114 &-3604817294544492853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487364066581968361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143bdac53e4570f48b7dff95d8ab150f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedOfSpin: 360
