@@ -98,7 +98,7 @@ MonoBehaviour:
   _paddingX: 1
   _paddingY: 1
   _health: 200
-  _deathSound: {fileID: 8300000, guid: 1c9d2de3ad563e5468c4195f1485062d, type: 3}
+  _deathSound: {fileID: 8300000, guid: 95d66a886f23fa64a8a1dc0a4cb64897, type: 3}
   _deathSoundVolume: 0.7
   _laserPrefab: {fileID: 8487364066581968361, guid: 742a57ee9b26aea4ca63617feb139269,
     type: 3}

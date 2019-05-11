@@ -1,8 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
-    public void LoadGameOver() => SceneManager.LoadScene("GameOver");
+    [SerializeField]
+    private float _gameOverDelay = 3.0f;
+
+    public void LoadGameOver() => StartCoroutine(LoadGameOverWithDelay());
+
+    private IEnumerator LoadGameOverWithDelay() {
+        yield return new WaitForSeconds(_gameOverDelay);
+        SceneManager.LoadScene("GameOver");
+    }
 
     public void LoadGameScreen() => SceneManager.LoadScene("Game");
 
