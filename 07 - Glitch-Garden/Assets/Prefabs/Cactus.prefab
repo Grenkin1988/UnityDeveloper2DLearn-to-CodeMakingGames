@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2724ab1bd4e3c9348a92406d00e9f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 5896978388462484995, guid: 071baee8d4dd8cd479527fbc1fe9ab0a,
+  _projectilePrefab: {fileID: 6723352521965224276, guid: 071baee8d4dd8cd479527fbc1fe9ab0a,
     type: 3}
   _gunPosition: {fileID: 872480666}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour {
     [SerializeField]
-    private GameObject _projectilePrefab;
+    private Projectile _projectilePrefab;
     [SerializeField]
     private Transform _gunPosition;
 
