@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour {
         Die();
     }
 
-    private void Die() {
+    private void Die() {        
         Destroy(gameObject);
     }
 }
