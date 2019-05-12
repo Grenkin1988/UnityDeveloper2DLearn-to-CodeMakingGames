@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attacker : MonoBehaviour {
-    [Range(0f, 10f), SerializeField]
-    private float _moveSpeed = 1f;
+    private float _currentSpeed = 1f;
 
     private void Start() {
 
     }
 
     private void Update() {
-        transform.Translate(Vector2.left * _moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
+    }
+
+    public void SetMovementSpeed(float speed) {
+        _currentSpeed = speed;
     }
 }
