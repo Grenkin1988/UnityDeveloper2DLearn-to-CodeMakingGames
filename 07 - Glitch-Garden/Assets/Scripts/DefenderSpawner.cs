@@ -16,13 +16,20 @@ public class DefenderSpawner : MonoBehaviour
     }
 
     private Vector2 GetSquareClicked() {
-        Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        var clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
-        return worldPos;
+        Vector2 gridPos = SnapToGrid(worldPos);
+        return gridPos;
     }
 
-    private void SpawnDefender(Vector2 worldPos) {
+    private Vector2 SnapToGrid(Vector2 rawWorldPos) {
+        float nexX = Mathf.RoundToInt(rawWorldPos.x);
+        float nexY = Mathf.RoundToInt(rawWorldPos.y);
+        return new Vector2(nexX, nexY);
+    }
+
+    private void SpawnDefender(Vector2 roundedPos) {
         
-        GameObject newDefender = Instantiate(_defender, worldPos, Quaternion.identity);
+        GameObject newDefender = Instantiate(_defender, roundedPos, Quaternion.identity);
     }
 }
