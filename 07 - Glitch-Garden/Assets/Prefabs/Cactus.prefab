@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2261474713395246435}
   - component: {fileID: 6802687166919026980}
+  - component: {fileID: 573574851944877534}
+  - component: {fileID: 1627836982}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -45,6 +47,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _starCost: 100
+--- !u!114 &573574851944877534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261474713395246432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2724ab1bd4e3c9348a92406d00e9f8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 6723352521965224276, guid: 071baee8d4dd8cd479527fbc1fe9ab0a,
+    type: 3}
+  _gunPosition: {fileID: 2261474714136845628}
+--- !u!95 &1627836982
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261474713395246432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31c00238d1d400e47ab53537d49db086, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2261474714033494343
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,8 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2261474714033494339}
   - component: {fileID: 2261474714033494336}
-  - component: {fileID: 2261474714033494337}
-  - component: {fileID: 2261474714033494342}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -129,40 +163,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2261474714033494337
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2261474714033494343}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31c00238d1d400e47ab53537d49db086, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2261474714033494342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2261474714033494343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2724ab1bd4e3c9348a92406d00e9f8cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 6723352521965224276, guid: 071baee8d4dd8cd479527fbc1fe9ab0a,
-    type: 3}
-  _gunPosition: {fileID: 2261474714136845628}
 --- !u!1 &2261474714136845629
 GameObject:
   m_ObjectHideFlags: 0
