@@ -7,11 +7,7 @@ public class Attacker : MonoBehaviour {
 
     }
 
-    private void Update() {
-        transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
-    }
+    private void Update() => transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
 
-    public void SetMovementSpeed(float speed) {
-        _currentSpeed = speed;
-    }
+    public void SetMovementSpeed(float speed) => _currentSpeed = speed;
 }

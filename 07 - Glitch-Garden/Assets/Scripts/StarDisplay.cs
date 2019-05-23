@@ -19,12 +19,12 @@ public class StarDisplay : MonoBehaviour {
         }
     }
 
+    public bool HaveEnoughStars(int amount) => _stars >= amount;
+
     private void Start() {
         _starText = GetComponent<Text>();
         UpdateDisplay();
     }
 
-    private void UpdateDisplay() {
-        _starText.text = $"{_stars}";
-    }
+    private void UpdateDisplay() => _starText.text = $"{_stars}";
 }
